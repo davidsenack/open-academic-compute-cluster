@@ -1,0 +1,7 @@
+recursive-include configs 
+recursive-include docs
+recursive-include terraform
+recursive-include tests
+include CHANGELOG.md
+include README.md
+include LICENSE
