@@ -6,15 +6,15 @@ HERE = pathlib.Path(__file__).parent
 README = (HERE / "README.md").read_text()
 
 setup(
-    name="open-academic-compute-cluster",
+    name="oacc",
     version="0.1.0",
-    description="Simplified HPC in the AWS Cloud",
+    description="The Open Academic Compute Cluster: Simplified HPC in the AWS Cloud",
     long_description=README,
     long_description_content_type="text/markdown",
     url="https://github.com/davidsenack/open-academic-compute-cluster",
     author="David Senack",
     author_email="david.senack@gmail.com",
-    license="MIT"
+    license="MIT",
     classifiers=[
         "Intended Audience :: Education",
         "Intended Audience :: Science/Research",
