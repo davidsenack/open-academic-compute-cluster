@@ -1,6 +1,6 @@
 The Open Academic Compute Cluster (OACC) 
 
-Version 0.1.0
+Version 0.1.1
 
 The Open Academic Compute Cluster (OACC) is a project aiming to provide affordable cloud-based
 cluster computing resources for academics with limited availability, funding, and access to such
