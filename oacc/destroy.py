@@ -3,7 +3,6 @@
 
 
 import os
-import build
 
 
 def destroy_prep():
