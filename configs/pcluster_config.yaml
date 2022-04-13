@@ -1,0 +1,103 @@
+Region: aws_region
+Image:
+  Os: ubuntu2004
+HeadNode:
+  InstanceType: m5zn.12xlarge
+  Networking:
+    SubnetId: public_subnet_id
+  Ssh:
+    KeyName: oacc_key_pair
+  LocalStorage:
+    RootVolume:
+      Size: 980
+      VolumeType: gp2
+Scheduling:
+  Scheduler: slurm
+  SlurmQueues:
+  - Name: stdmemq
+    ComputeSettings:
+      LocalStorage:
+        RootVolume:
+          Size: 480
+          VolumeType: gp2
+    ComputeResources:
+    - Name: m5zn12xlarge
+      InstanceType: m5zn.12xlarge
+      MinCount: 0
+      MaxCount: 10 
+      SpotPrice: 0.90
+      Efa:
+        Enabled: true
+    CapacityType: SPOT
+    Networking:
+      SubnetIds:
+      - private_subnet_id
+      PlacementGroup:
+        Enabled: true
+  - Name: debugq
+    ComputeSettings:
+      LocalStorage:
+        RootVolume:
+          Size: 480
+          VolumeType: gp2
+    ComputeResources:
+    - Name: m5zn12xlarge
+      InstanceType: m5zn.12xlarge
+      MinCount: 0
+      MaxCount: 2 
+      SpotPrice: 0.90
+      Efa:
+        Enabled: true
+    CapacityType: SPOT
+    Networking:
+      SubnetIds:
+      - private_subnet_id
+      PlacementGroup:
+        Enabled: true
+  - Name: bigmemq
+    ComputeSettings:
+      LocalStorage:
+        RootVolume:
+          Size: 480
+          VolumeType: gp2
+    ComputeResources:
+    - Name: r5n24xlarge
+      InstanceType: r5n.24xlarge
+      MinCount: 0
+      MaxCount: 2
+      SpotPrice: 2.1
+      Efa:
+        Enabled: true
+    CapacityType: SPOT
+    Networking:
+      SubnetIds:
+      - private_subnet_id
+      PlacementGroup:
+        Enabled: true
+  - Name: gpuq
+    ComputeSettings:
+      LocalStorage:
+        RootVolume:
+          Size: 480
+          VolumeType: gp2
+    ComputeResources:
+    - Name: g4dnmetal
+      InstanceType: g4dn.metal
+      MinCount: 0
+      MaxCount: 1
+      SpotPrice: 2.3472
+      Efa:
+        Enabled: true
+    CapacityType: SPOT
+    Networking:
+      SubnetIds:
+      - private_subnet_id
+      PlacementGroup:
+        Enabled: true
+SharedStorage:
+  - MountDir: /scratch
+    Name: scratch-disk
+    StorageType: FsxLustre
+    FsxLustreSettings:
+      StorageCapacity: 36000
+      DeploymentType: SCRATCH_1
