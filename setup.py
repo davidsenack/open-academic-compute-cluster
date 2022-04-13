@@ -7,7 +7,7 @@ README = (HERE / "README.md").read_text()
 
 setup(
     name="oacc",
-    version="0.1.0",
+    version="0.1.1",
     description="The Open Academic Compute Cluster: Simplified HPC in the AWS Cloud",
     long_description=README,
     long_description_content_type="text/markdown",
@@ -26,7 +26,6 @@ setup(
     ],
     packages=find_packages(),
     include_package_data=True,
-    install_requires=["aws-parallelcluster", "aws-parallelcluster-node"],
     entry_points={
         "console_scripts": [
             "oacc=oacc.oacc:main",
