@@ -1,6 +1,6 @@
 import os
-from . import oacc_messages
-from . import status
+import oacc_messages
+import status
 
 
 def verification(action):

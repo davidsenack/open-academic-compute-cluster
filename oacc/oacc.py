@@ -1,11 +1,11 @@
 #!/bin/python3
 
-from . import build
-from . import destroy
-from . import help
-from . import status
-from . import oacc_messages
-from . import version
+import build
+import destroy
+import help
+import status
+import oacc_messages
+import version
 import os
 import sys
 from functools import partial
