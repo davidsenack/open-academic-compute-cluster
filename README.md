@@ -30,14 +30,10 @@ OACC requires the aws-cli, parallelcluster, and terrform packages to be installe
 * Configure the AWS CLI
 
   ```sh
-    $ aws configure
-
+    aws configure
     AWS Access Key ID: {Your Access Key ID}
-
     AWS Secret Access Key: {Your AWS Secret Access Key}
-
     Default region name: {Your default region name}
-
     Default output format: {Your default output format}
   ```
 
