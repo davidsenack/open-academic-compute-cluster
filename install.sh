@@ -1,7 +1,6 @@
 #!/bin/bash
 
-mv ../open-academic-compute-cluster/ /opt
-rm -rf ../open-academic-compute-cluster
+mv ./open-academic-compute-cluster/ /opt
 cd /opt/open-academic-compute-cluster/oacc
 mv oacc.py oacc
 chmod +x oacc
