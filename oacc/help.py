@@ -6,7 +6,7 @@ def oacc_help_menu():
         """
     Usage: oacc [options] (ex. "oacc build", or "oacc info")
 
-    The available execution are listed below.
+    The available commands for execution are listed below.
     Main commands:
         build           Build OACC cluster infrastructure
         shell           Log default user into shell on cluster head node
