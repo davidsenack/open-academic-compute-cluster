@@ -2,13 +2,13 @@
 
 # Install the Open Academic Compute Cluster
 #
-# Run "sudo bash ./open-academic-compute-cluster/install.sh"
+# Run "bash ./open-academic-compute-cluster/install.sh"
 
-PROG_DIR=/opt/open-academic-compute-cluster/
+PROG_DIR=~/.open-academic-compute-cluster/oacc
 
-cp -r ./open-academic-compute-cluster/ /opt
-cp $PROG_DIR/oacc/oacc.py $PROG_DIR/oacc/oacc
-chmod +x $PROG_DIR/oacc/oacc
-echo "add oacc to path with: export PATH=\$PATH:/opt/open-academic-compute-cluster/oacc"
+cp -r ./open-academic-compute-cluster/ ~/.open-academic-compute-cluster/
+cp $PROG_DIR/oacc.py $PROG_DIR/oacc
+chmod +x $PROG_DIR/oacc
+echo "add oacc to path with: export PATH=\$PATH:~/.open-academic-compute-cluster/oacc"
 
 # End
