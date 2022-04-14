@@ -22,11 +22,9 @@ OACC requires the aws-cli, parallelcluster, and terrform packages to be installe
 * AWS Command Line Interface (aws-cli)
 
   ```sh
-    $ curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-
-    $ unzip awscliv2.zip
-
-    $ sudo ./aws/install
+    curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+    unzip awscliv2.zip
+    sudo ./aws/install
   ```
 
 * Configure the AWS CLI
@@ -47,15 +45,12 @@ OACC requires the aws-cli, parallelcluster, and terrform packages to be installe
 
 * AWS ParallelCluster (pcluster)
   ```sh
-    $ python3 -m pip install "aws-parallelcluster" --upgrade --user
-
-    $ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
-
-    $ chmod ug+x ~/.nvm/nvm.sh
-
-    $ source ~/.nvm/nvm.sh
-
-    $ nvm install --lts
+    python3 -m pip install "aws-parallelcluster" --upgrade --user
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+    chmod ug+x ~/.nvm/nvm.sh
+    source ~/.nvm/nvm.sh
+    nvm install --lts
+    export PATH=$PATH:/home/ubuntu/.local/bin
   ```
 
   https://docs.aws.amazon.com/parallelcluster/latest/ug/install-v3-pip.html
@@ -63,13 +58,10 @@ OACC requires the aws-cli, parallelcluster, and terrform packages to be installe
 * Terraform (terraform)
 
   ```sh
-    $ sudo apt-get update && sudo apt-get install -y gnupg software-properties-common curl
-
-    $ curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
-
-    $ sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
-
-    $ sudo apt-get update && sudo apt-get install terraform
+    sudo apt-get update && sudo apt-get install -y gnupg software-properties-common curl
+    curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+    sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+    sudo apt-get update && sudo apt-get install terraform
   ```
 
   https://learn.hashicorp.com/tutorials/terraform/install-cli?in=terraform/aws-get-started
@@ -81,57 +73,54 @@ OACC requires the aws-cli, parallelcluster, and terrform packages to be installe
 1. Clone the repository.
 
    ```sh
-   $ git clone https://github.com/davidsenack/open-academic-compute-cluster.git
+   git clone https://github.com/davidsenack/open-academic-compute-cluster.git
    ```
 3. Run the included installation script.
 
    ```sh
-   $ bash ./open-academic-compute-cluster/install.sh
+   bash ./open-academic-compute-cluster/install.sh
    ```
 4. Add install path to your $PATH variable.
 
    ```sh
-   $ export PATH=$PATH:~/.open-academic-compute-cluster/oacc
+   export PATH=$PATH:~/.open-academic-compute-cluster/oacc
    ```
 
 5. Verify successful installation.
 
    ```sh
-   $ oacc help
+   oacc help
    ```
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+<br>
 
-
-
-<!-- USAGE EXAMPLES -->
 ## Usage
 
 * To run your first OACC Test Cluster, simply run :
 
     ```sh
-    $ oacc test
+    oacc test
     ```
 * When you see the CREATE_IN_PROGRESS message, check your cluster status with:
 
     ```sh
-    $ oacc status
+    oacc status
     ```
 * After about 10 minutes your cluster should be ready. Try opening a shell with:
 
     ```sh
-    $ oacc shell
+    oacc shell
     ```
 * When you are finished with your cluster, simply type:
 
     ```sh
-    $ oacc destroy
+    oacc destroy
     ```
 
 * That's it! It's really that simple. Now when you're ready to build the actual cluster, simply enter the command:
 
     ```sh
-    $ oacc build
+    oacc build
     ```
 
     and follow the steps above. Happy (super)computing!
