@@ -1,6 +1,6 @@
 Region: aws_region
 Image:
-  Os: centos7
+  Os: ubuntu2004
 HeadNode:
   InstanceType: m5zn.12xlarge
   Networking:
